@@ -1,6 +1,6 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.quinnox.IoTTechnicians.controller.Home"
 	xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page title="Welcome, {oTechnician>/TechnicianName}">
+	<Page title="Welcome, {oTechnician>/TechnicianName}" showNavButton="true" navButtonPress="onNavBack">
 		<content>
 			<GenericTile header="{i18n>OpenReqHeader}" class="sapUiTinyMargin" press="onOpenServReq">
 				<TileContent>

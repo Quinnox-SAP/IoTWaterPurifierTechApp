@@ -15,6 +15,15 @@ sap.ui.define([
 			this.result = {};
 			this.result.items = [];
 			this.odataService = new sap.ui.model.odata.ODataModel("/sap/opu/odata/sap/ZQNX_IOT_SRV/", true);
+			this.getView().addEventDelegate({
+				onBeforeShow: jQuery.proxy(function (evt) {
+					this.onBeforeShow(evt);
+				}, this)
+			});
+
+		},
+		onBeforeShow: function (oEvent) {
+			this.getView().byId("idnum").setValue("");
 		},
 
 		onLoginPress: function () {
@@ -26,21 +35,24 @@ sap.ui.define([
 			// 		that.getView().byId("idnum").setValue("");
 			// 	}
 			// });
-			that.getOwnerComponent().getRouter().navTo("RouteHome", {
-				mobileNum: mobNum
-			});
-			// sap.ui.getCore().mobNum = that.getView().byId("idnum").getValue();
-			//this.odataService.read("TechnicianNo?MobileNo='" + mobNum + "'", null, null, false, function (response) {
-			// 	if (response.Message === "Valid No") {
-			// 		that.getOwnerComponent().getModel("oTechnician").setData(response);
-			// 		that.getOwnerComponent().getModel("oTechnician").refresh(true);
-			// 		that.getOwnerComponent().getRouter().navTo("RouteHome");
-
-			// 	} else {
-			// 		MessageBox.error("Enter Valid Number");
-			// 		that.getView().byId("idnum").setValue("");
-			// 	}
+			// that.getOwnerComponent().getRouter().navTo("RouteHome", {
+			// 	mobileNum: mobNum
 			// });
+			// sap.ui.getCore().mobNum = that.getView().byId("idnum").getValue();
+			this.odataService.read("TechnicianNo?MobileNo='" + mobNum + "'", null, null, false, function (response) {
+				if (response.Message === "Valid No") {
+					// that.getOwnerComponent().getModel("oTechnician").setData(response);
+					// that.getOwnerComponent().getModel("oTechnician").refresh(true);
+					// that.getOwnerComponent().getRouter().navTo("RouteHome");
+					that.getOwnerComponent().getRouter().navTo("RouteHome", {
+						mobileNum: mobNum
+					});
+
+				} else {
+					MessageBox.error("Enter Valid Number");
+					that.getView().byId("idnum").setValue("");
+				}
+			});
 
 		}
 

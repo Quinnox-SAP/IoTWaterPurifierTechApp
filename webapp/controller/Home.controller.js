@@ -1,7 +1,8 @@
 sap.ui.define([
 	"com/quinnox/IoTTechnicians/controller/BaseController",
-	"sap/m/MessageBox"
-], function (BaseController, MessageBox) {
+	"sap/m/MessageBox",
+	"sap/ui/core/routing/History",
+], function (BaseController, MessageBox, History) {
 	"use strict";
 
 	return BaseController.extend("com.quinnox.IoTTechnicians.controller.Home", {
@@ -100,6 +101,13 @@ sap.ui.define([
 			// 		that.getOwnerComponent().getModel("oClosedServices").refresh(true);
 			// 		that.getOwnerComponent().getRouter().navTo("RouteClosedServRequests");
 			// 	});
+		},
+		onNavBack: function () {
+			var sHistory = History.getInstance();
+			var sPreviousHash = sHistory.getPreviousHash();
+			if (sPreviousHash !== undefined) {
+				window.history.go(-1);
+			}
 		}
 	});
 
