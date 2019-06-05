@@ -163,8 +163,17 @@ sap.ui.define([
 		onNavBack: function () {
 			var that = this;
 			that.getView().byId("searchId").setValue("");
-			var oList = that.getView().byId("idList");
-			oList.getBinding("items").refresh(true);
+			var aFilters = [];
+			var sQuery = "";
+			if (sQuery && sQuery.length > 0) {
+				var filter = new Filter("NotiNumber", sap.ui.model.FilterOperator.Contains, sQuery);
+				aFilters.push(filter);
+			}
+
+			// update list binding
+			var list = this.byId("idList");
+			var binding = list.getBinding("items");
+			binding.filter(aFilters);
 			// this.odataService.read("TechnicianMasterSet?$filter=TechnicianNo eq '" + this.mobNum + "' and ReqType eq 'X'", null,
 			// 	null, false,
 			// 	function (

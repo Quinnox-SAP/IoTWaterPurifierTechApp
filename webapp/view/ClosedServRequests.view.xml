@@ -2,7 +2,7 @@
 	controllerName="com.quinnox.IoTTechnicians.controller.ClosedServRequests" xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="{i18n>ClosedReqTitle}" showNavButton="true" navButtonPress="onNavBack">
 		<content>
-			<SearchField liveChange="onSearch"></SearchField>
+			<SearchField id="idSearch" liveChange="onSearch"></SearchField>
 			<List id="idList" mode="SingleSelectMaster" items="{oClosedServices>/results}">
 				<items>
 					<ObjectListItem title="Service Request Number : {oClosedServices>NotiNumber}" intro="Date of Serviced : {oClosedServices>CompletedOn}"

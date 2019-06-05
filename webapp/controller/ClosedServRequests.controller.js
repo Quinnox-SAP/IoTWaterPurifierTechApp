@@ -1,7 +1,8 @@
 sap.ui.define([
 	"com/quinnox/IoTTechnicians/controller/BaseController",
-	"sap/ui/model/Filter"
-], function (BaseController, Filter) {
+	"sap/ui/model/Filter",
+	"sap/ui/core/routing/History",
+], function (BaseController, Filter, History) {
 	"use strict";
 
 	return BaseController.extend("com.quinnox.IoTTechnicians.controller.ClosedServRequests", {
@@ -45,6 +46,29 @@ sap.ui.define([
 			var list = this.byId("idList");
 			var binding = list.getBinding("items");
 			binding.filter(aFilters);
+		},
+		onNavBack: function () {
+			this.getView().byId("idSearch").setValue("");
+			var aFilters = [];
+			var sQuery = "";
+			if (sQuery && sQuery.length > 0) {
+				var filter = new Filter("NotiNumber", sap.ui.model.FilterOperator.Contains, sQuery);
+				aFilters.push(filter);
+			}
+
+			// update list binding
+			var list = this.byId("idList");
+			var binding = list.getBinding("items");
+			binding.filter(aFilters);
+			// var list = this.byId("idList");
+			// list.getBinding("items").refresh(true);
+			var sHistory = History.getInstance();
+			var sPreviousHash = sHistory.getPreviousHash();
+			if (sPreviousHash !== undefined) {
+				// sap.ui.getCore().doorFlag.setEnabled(false);
+				// sap.ui.getCore().listFlag = true;
+				window.history.go(-1);
+			}
 		}
 
 		/**
