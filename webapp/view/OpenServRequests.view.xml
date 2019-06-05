@@ -2,11 +2,12 @@
 	controllerName="com.quinnox.IoTTechnicians.controller.OpenServRequests" xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="{i18n>OpenReqTitle}" showNavButton="true" navButtonPress="onNavBack">
 		<content>
-			<SearchField liveChange="onSearch"></SearchField>
+			<SearchField id="searchId" liveChange="onSearch"></SearchField>
 			<List id="idList" mode="SingleSelectLeft" items="{oOpenServices>/results}">
 				<items>
-					<ObjectListItem id="idObjList" intro="Service Request Date : {oOpenServices>RaisedOn}" title="Service Request Number : {oOpenServices>NotiNumber}"
-						selected="false" number="{oOpenServices>FaultCode}" numberUnit="{oOpenServices>NotiDesc}" type="Active" press="onListItemPress">
+					<ObjectListItem id="idObjList" intro="Service Request Date : {oOpenServices>RaisedOn}"
+						title="Service Request Number : {oOpenServices>NotiNumber}" selected="false" number="{oOpenServices>FaultCode}"
+						numberUnit="{oOpenServices>NotiDesc}" type="Active" press="onListItemPress">
 						<attributes>
 							<ObjectAttribute text="Device Number : {oOpenServices>DeviceName}"></ObjectAttribute>
 							<ObjectAttribute id="idAddress" text="Address : {oOpenServices>Address}" active="true"></ObjectAttribute>

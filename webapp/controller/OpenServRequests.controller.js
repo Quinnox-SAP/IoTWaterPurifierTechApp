@@ -26,6 +26,14 @@ sap.ui.define([
 
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.getRoute("RouteOpenServRequests").attachPatternMatched(this._onObjectMatched, this);
+			this.getView().addEventDelegate({
+				onBeforeShow: jQuery.proxy(function (evt) {
+					this.onBeforeShow(evt);
+				}, this)
+			});
+		},
+		onBeforeShow: function () {
+			// this.getView().byId("searchId").setValue("");
 		},
 		_onObjectMatched: function (oEvent) {
 			var that = this;
@@ -40,6 +48,8 @@ sap.ui.define([
 					//that.getOwnerComponent().getRouter().navTo("RouteOpenServRequests");
 				});
 			this.getView().byId("idList").removeSelections(true);
+			// this.getView().byId("searchId").setValue("");
+			// that.getOwnerComponent().getModel("oOpenServices").refresh(true);
 		},
 
 		onSearch: function (oEvt) {
@@ -149,6 +159,26 @@ sap.ui.define([
 		onCancelPress: function () {
 			this.submitDialog.close();
 			this.submitDialog.destroy();
+		},
+		onNavBack: function () {
+			var that = this;
+			that.getView().byId("searchId").setValue("");
+			var oList = that.getView().byId("idList");
+			oList.getBinding("items").refresh(true);
+			// this.odataService.read("TechnicianMasterSet?$filter=TechnicianNo eq '" + this.mobNum + "' and ReqType eq 'X'", null,
+			// 	null, false,
+			// 	function (
+			// 		response) {
+
+			// 		that.getOwnerComponent().getModel("oOpenServices").setData(response);
+			// 		that.getOwnerComponent().getModel("oOpenServices").refresh(true);
+			// 		//that.getOwnerComponent().getRouter().navTo("RouteOpenServRequests");
+			// 	});
+			// that.getOwnerComponent().getModel("oOpenServices").refresh(true);
+			var sPreviousHash = History.getInstance().getPreviousHash();
+			if (sPreviousHash !== undefined) {
+				history.go(-1);
+			}
 		}
 
 		/**
