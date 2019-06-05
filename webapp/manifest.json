@@ -1,0 +1,172 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "com.quinnox.IoTTechnicians",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZQNX_IOT_SRV": {
+				"uri": "/IotWaterPurifier/sap/opu/odata/sap/ZQNX_IOT_SRV/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/ZQNX_IOT_SRV/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "com.quinnox.IoTTechnicians.view.Root",
+			"type": "XML",
+			"async": true,
+			"id": "Root"
+		},
+		"dependencies": {
+			"minUI5Version": "1.60.1",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.quinnox.IoTTechnicians.i18n.i18n"
+				}
+			},
+			"": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZQNX_IOT_SRV",
+				"preload": true
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "com.quinnox.IoTTechnicians.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"name": "RouteHome",
+					"pattern": "Home/{mobileNum}",
+					"target": [
+						"Home"
+					]
+				},
+				{
+					"name": "RouteOpenServRequests",
+					"pattern": "OpenServRequests/{mobileNum}",
+					"target": [
+						"OpenServRequests"
+					]
+				},
+				{
+					"name": "RouteClosedServRequests",
+					"pattern": "ClosedServRequests/{mobileNum}",
+					"target": [
+						"ClosedServRequests"
+					]
+				},
+				{
+					"name": "RouteGoogleMap",
+					"pattern": "GoogleMap",
+					"target": [
+						"GoogleMap"
+					]
+				},
+				{
+					"name": "RouteLogin",
+					"pattern": "",
+					"target": [
+						"Login"
+					]
+				}
+			],
+			"targets": {
+				"TargetRoot": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "Root"
+				},
+				"Home": {
+					"viewType": "XML",
+					"viewName": "Home"
+				},
+				"OpenServRequests": {
+					"viewType": "XML",
+					"viewName": "OpenServRequests"
+				},
+				"ClosedServRequests": {
+					"viewType": "XML",
+					"viewName": "ClosedServRequests"
+				},
+				"GoogleMap": {
+					"viewType": "XML",
+					"viewName": "GoogleMap"
+				},
+				"Login": {
+					"viewType": "XML",
+					"viewName": "Login"
+				},
+				"Remarks": {
+					"viewType": "XML",
+					"viewName": "Remarks"
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

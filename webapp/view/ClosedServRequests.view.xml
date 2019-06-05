@@ -1,0 +1,25 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.quinnox.IoTTechnicians.controller.ClosedServRequests" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="{i18n>ClosedReqTitle}" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<SearchField liveChange="onSearch"></SearchField>
+			<List id="idList" mode="SingleSelectMaster" items="{oClosedServices>/results}">
+				<items>
+					<ObjectListItem title="Service Request Number : {oClosedServices>NotiNumber}" intro="Date of Serviced : {oClosedServices>CompletedOn}"
+						number="{oClosedServices>FaultCode}" numberUnit="{oClosedServices>NotiDesc}">
+						<attributes>
+							<ObjectAttribute text="Device Number :{oClosedServices>DeviceName}"></ObjectAttribute>
+							<ObjectAttribute text="Remarks : Short Circuit"></ObjectAttribute>
+						</attributes>
+						<firstStatus>
+							<ObjectStatus text="Raised By : {oClosedServices>CustName}"></ObjectStatus>
+						</firstStatus>
+						<secondStatus>
+							<ObjectStatus text="Raised On : {oClosedServices>RaisedOn}"></ObjectStatus>
+						</secondStatus>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+	</Page>
+</mvc:View>

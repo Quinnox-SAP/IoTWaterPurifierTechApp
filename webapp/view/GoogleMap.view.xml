@@ -1,0 +1,47 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.quinnox.IoTTechnicians.controller.GoogleMap" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="true" title="Customer Location" showFooter="true" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<HBox id="googleMap" height="100%" width="100%"></HBox>
+			<!--<Label text="Adress" design="Bold" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true"-->
+			<!--	class="sapUiTinyMargin"/>-->
+			<!--<vbm:GeoMap legendVisible="true" scaleVisible="true" width="100%" height="600px" initialPosition="0;0;0" centerPosition="0;0"-->
+			<!--	initialZoom="2" zoomlevel="2" enableAnimation="false" refMapLayerStack="Default" disableZoom="false" disablePan="false">-->
+			<!--	<vbm:resources/>-->
+			<!--	<vbm:legend/>-->
+			<!--	<vbm:vos>-->
+			<!--		<vbm:Spots>-->
+			<!--			<vbm:items>-->
+			<!--				<vbm:Spot position="-119.083855;37.386051;0" alignment="5"/>-->
+			<!--			</vbm:items>-->
+			<!--		</vbm:Spots>-->
+			<!--		<vbm:Circles>-->
+			<!--			<vbm:items/>-->
+			<!--		</vbm:Circles>-->
+			<!--		<vbm:Routes>-->
+			<!--			<vbm:items/>-->
+			<!--		</vbm:Routes>-->
+			<!--	</vbm:vos>-->
+			<!--</vbm:GeoMap>-->
+		</content>
+		<footer>
+			<OverflowToolbar>
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="Navigate" type="Emphasized" press="onNavigatePress"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<!--	<headerContent/>-->
+		<!--<subHeader>-->
+		<!--	<OverflowToolbar visible="true" enabled="true" width="auto" design="Transparent">-->
+		<!--		<content>-->
+		<!--			<Text text="Customer Name" width="auto" maxLines="1" wrapping="true" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+		<!--			<ToolbarSpacer width=""/>-->
+		<!--			<Text text="Contact No" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>-->
+		<!--		</content>-->
+		<!--	</OverflowToolbar>-->
+		<!--</subHeader>-->
+		<!--<customHeader/>-->
+	</Page>
+</mvc:View>

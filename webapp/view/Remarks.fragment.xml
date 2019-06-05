@@ -1,0 +1,28 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="com.quinnox.IoTTechnicians.controller.OpenServRequests"
+	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<Dialog contentWidth="400px" title="Confirmation" id="idSettings">
+		<content>
+			<f:SimpleForm columnsL="7" columnsM="7" editable="false" emptySpanL="1" emptySpanM="1" labelSpanL="4" labelSpanM="4"
+				layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024">
+				<f:content>
+					<Label text="Cause" required="true"></Label>
+					<ComboBox id="idCause">
+						<core:Item text="Short Circuit"></core:Item>
+						<core:Item text="Loose Connector"></core:Item>
+						<core:Item text="Operating Sequence Error"></core:Item>
+						<core:Item text="Incorrect SetPoint"></core:Item>
+						<core:Item text="Operating Error"></core:Item>
+					</ComboBox>
+					<Label text="Remarks" required="true"></Label>
+					<Input id="idRemarks"></Input>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<beginButton>
+			<Button text="Save" press="onSavePress"></Button>
+		</beginButton>
+		<endButton>
+			<Button text="Cancel" press="onCancelPress"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>
