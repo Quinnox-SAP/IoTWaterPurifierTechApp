@@ -68,6 +68,8 @@ sap.ui.define([
 				// sap.ui.getCore().doorFlag.setEnabled(false);
 				// sap.ui.getCore().listFlag = true;
 				window.history.go(-1);
+			} else {
+				this.getOwnerComponent().getRouter().navTo("RouteLogin");
 			}
 		}
 

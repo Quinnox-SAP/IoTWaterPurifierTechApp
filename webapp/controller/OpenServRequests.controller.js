@@ -187,6 +187,8 @@ sap.ui.define([
 			var sPreviousHash = History.getInstance().getPreviousHash();
 			if (sPreviousHash !== undefined) {
 				history.go(-1);
+			} else {
+				this.getOwnerComponent().getRouter().navTo("RouteLogin");
 			}
 		}
 

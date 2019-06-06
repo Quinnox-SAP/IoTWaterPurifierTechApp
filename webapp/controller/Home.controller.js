@@ -107,6 +107,8 @@ sap.ui.define([
 			var sPreviousHash = sHistory.getPreviousHash();
 			if (sPreviousHash !== undefined) {
 				window.history.go(-1);
+			} else {
+				this.getOwnerComponent().getRouter().navTo("RouteLogin");
 			}
 		}
 	});

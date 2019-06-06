@@ -1,6 +1,7 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
 	controllerName="com.quinnox.IoTTechnicians.controller.GoogleMap" xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page showHeader="true" title="Customer Location" showFooter="true" showNavButton="true" navButtonPress="onNavBack">
+	<!--<Page showHeader="true" title="Customer Location" showFooter="true" showNavButton="true" navButtonPress="onNavBack">-->
+	<Page showHeader="true" title="Customer Location" showFooter="true">
 		<content>
 			<HBox id="googleMap" height="100%" width="100%"></HBox>
 			<!--<Label text="Adress" design="Bold" width="auto" required="false" textAlign="Begin" textDirection="Inherit" visible="true"-->
