@@ -9,7 +9,7 @@
 					<ObjectListItem title="Service Request Number : {oClosedServices>NotiNumber}" intro="Date of Serviced : {oClosedServices>CompletedOn}"
 						number="{oClosedServices>FaultCode}" numberUnit="{oClosedServices>FaultCodeDesc}">
 						<attributes>
-							<ObjectAttribute text="Device Number :{oClosedServices>DeviceName}"></ObjectAttribute>
+							<ObjectAttribute text="Device Number :{oClosedServices>PId}"></ObjectAttribute>
 							<ObjectAttribute text="Remarks : Short Circuit"></ObjectAttribute>
 						</attributes>
 						<firstStatus>

@@ -10,7 +10,7 @@
 						title="Service Request Number : {oOpenServices>NotiNumber}" selected="false" number="{oOpenServices>FaultCode}"
 						numberUnit="{oOpenServices>FaultCodeDesc}" type="Active" press="onListItemPress">
 						<attributes>
-							<ObjectAttribute text="Device Number : {oOpenServices>DeviceName}"></ObjectAttribute>
+							<ObjectAttribute text="Device Number : {oOpenServices>PId}"></ObjectAttribute>
 							<ObjectAttribute id="idAddress" text="Address : {oOpenServices>Address}" active="true"></ObjectAttribute>
 						</attributes>
 						<firstStatus>

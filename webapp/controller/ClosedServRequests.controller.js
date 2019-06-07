@@ -22,6 +22,18 @@ sap.ui.define([
 		},
 		_onObjectMatched: function (oEvent) {
 			var that = this;
+			that.getView().byId("idSearch").setValue("");
+			var aFilters = [];
+			var sQuery = "";
+			if (sQuery && sQuery.length > 0) {
+				var filter = new Filter("NotiNumber", sap.ui.model.FilterOperator.Contains, sQuery);
+				aFilters.push(filter);
+			}
+
+			// update list binding
+			var list = this.byId("idList");
+			var binding = list.getBinding("items");
+			binding.filter(aFilters);
 			var mobNum = oEvent.getParameter("arguments").mobileNum;
 			this.odataService.read("TechnicianMasterSet?$filter=TechnicianNo eq '" + mobNum + "' and ReqType eq ''", null,
 				null, false,
