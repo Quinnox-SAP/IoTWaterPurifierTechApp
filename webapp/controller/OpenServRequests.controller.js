@@ -32,9 +32,9 @@ sap.ui.define([
 				}, this)
 			});
 		},
-		onBeforeShow: function () {
-			// this.getView().byId("searchId").setValue("");
-		},
+		// onBeforeShow: function () {
+		// 	// this.getView().byId("searchId").setValue("");
+		// },
 		_onObjectMatched: function (oEvent) {
 			var that = this;
 			that.getView().byId("searchId").setValue("");
@@ -84,8 +84,14 @@ sap.ui.define([
 			// sap.ui.getCore().address = that.getView().byId("idAddress").getValue();
 			//this.getOwnerComponent().getRouter().navTo("RouteGoogleMap");
 			//console.log(sap.ui.getCore().address);
-			var oList = this.getView().byId("idList");
-			var sItems = oList.getSelectedItems();
+			// var oList = this.getView().byId("idList");
+			// var sItems = oList.getSelectedItems();
+			sap.ui.getCore().serviceReqNo = evt.getSource().getTitle();
+		},
+
+		onAddress: function (Evt) {
+			sap.ui.getCore().address = Evt.getSource().getText();
+			this.getOwnerComponent().getRouter().navTo("RouteGoogleMap");
 		},
 
 		onSubmitDialog: function () {
