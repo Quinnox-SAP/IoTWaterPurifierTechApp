@@ -75,6 +75,9 @@ sap.ui.define([
 		onNavigatePress: function () {
 			//window.location.replace("https://www.google.co.in/maps/dir/Mumbai/Bengaluru/");
 			window.location.replace("http://maps.google.com");
+		},
+		onPress:function(){
+			this.getOwnerComponent().getRouter().navTo("Login");
 		}
 
 		/**

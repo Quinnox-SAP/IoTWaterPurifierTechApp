@@ -83,6 +83,9 @@ sap.ui.define([
 			} else {
 				this.getOwnerComponent().getRouter().navTo("RouteLogin");
 			}
+		},
+			onPress:function(){
+			this.getOwnerComponent().getRouter().navTo("Login");
 		}
 
 		/**

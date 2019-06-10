@@ -2,6 +2,9 @@
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<!--<Page title="Welcome, {oTechnician>/TechnicianName}" showNavButton="true" navButtonPress="onNavBack">-->
 	<Page title="Welcome, {oTechnician>/TechnicianName}">
+			<headerContent>
+			<Button icon="sap-icon://log" press="onPress"/>
+		   </headerContent>
 		<content>
 			<GenericTile header="{i18n>OpenReqHeader}" class="sapUiTinyMargin" press="onOpenServReq">
 				<TileContent>
