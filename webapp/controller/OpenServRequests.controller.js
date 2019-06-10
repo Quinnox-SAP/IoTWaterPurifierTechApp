@@ -32,9 +32,9 @@ sap.ui.define([
 				}, this)
 			});
 		},
-		// onBeforeShow: function () {
-		// 	// this.getView().byId("searchId").setValue("");
-		// },
+		onBeforeShow: function () {
+			// this.getView().byId("searchId").setValue("");
+		},
 		_onObjectMatched: function (oEvent) {
 			var that = this;
 			that.getView().byId("searchId").setValue("");

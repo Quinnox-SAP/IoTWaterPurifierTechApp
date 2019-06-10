@@ -11,7 +11,7 @@
 						numberUnit="{oOpenServices>FaultCodeDesc}" type="Active" press="onListItemPress">
 						<attributes>
 							<ObjectAttribute text="Device Number : {oOpenServices>PId}"></ObjectAttribute>
-							<ObjectAttribute id="idAddress" text="Address : {oOpenServices>Address}" active="true"></ObjectAttribute>
+							<ObjectAttribute id="idAddress" title="Address" text="{oOpenServices>Address}" active="true" press="onAddress"></ObjectAttribute>
 						</attributes>
 						<firstStatus>
 							<ObjectStatus text="Raised On : {oOpenServices>RaisedOn}"></ObjectStatus>
