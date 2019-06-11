@@ -3,7 +3,7 @@
 	<!--<Page showHeader="true" title="Customer Location" showFooter="true" showNavButton="true" navButtonPress="onNavBack">-->
 	<Page showHeader="true" title="Customer Location" showFooter="true">
 			<headerContent>
-			<Button icon="sap-icon://log" press="onPress"/>
+			<Button icon="sap-icon://log" press="onPress" type="Reject"/>
 		   </headerContent>
 		<content>
 			<HBox id="googleMap" height="100%" width="100%"></HBox>

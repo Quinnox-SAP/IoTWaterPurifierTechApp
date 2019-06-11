@@ -2,9 +2,9 @@
 	controllerName="com.quinnox.IoTTechnicians.controller.OpenServRequests" xmlns:html="http://www.w3.org/1999/xhtml">
 	<!--<Page title="{i18n>OpenReqTitle}" showNavButton="true" navButtonPress="onNavBack">-->
 	<Page title="{i18n>OpenReqTitle}">
-			<headerContent>
-			<Button icon="sap-icon://log" press="onPress"/>
-		   </headerContent>
+		<headerContent>
+			<Button icon="sap-icon://log" press="onPress" type="Reject"/>
+		</headerContent>
 		<content>
 			<SearchField id="searchId" liveChange="onSearch"></SearchField>
 			<List id="idList" mode="SingleSelectLeft" items="{oOpenServices>/results}">

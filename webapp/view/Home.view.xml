@@ -3,7 +3,7 @@
 	<!--<Page title="Welcome, {oTechnician>/TechnicianName}" showNavButton="true" navButtonPress="onNavBack">-->
 	<Page title="Welcome, {oTechnician>/TechnicianName}">
 			<headerContent>
-			<Button icon="sap-icon://log" press="onPress"/>
+			<Button icon="sap-icon://log" press="onPress" type="Reject"/>
 		   </headerContent>
 		<content>
 			<GenericTile header="{i18n>OpenReqHeader}" class="sapUiTinyMargin" press="onOpenServReq">
