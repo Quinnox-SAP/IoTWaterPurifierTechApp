@@ -8,7 +8,7 @@ sap.ui.define([
 	"sap/m/TextArea",
 	"sap/m/MessageBox",
 	"sap/ui/model/Filter",
-	"sap/ui/core/routing/History",
+	"sap/ui/core/routing/History"
 ], function (BaseController, Button, Dialog, Label, MessageToast, Text, TextArea, MessageBox, Filter, History) {
 	"use strict";
 
@@ -154,7 +154,7 @@ sap.ui.define([
 										window.history.go(-1);
 									} else {
 										this.getOwnerComponent().getRouter().navTo("RouteHome", {
-											mobileNum: this.mobNum,
+											mobileNum: this.mobNum
 										});
 									}
 
@@ -209,7 +209,7 @@ sap.ui.define([
 				this.getOwnerComponent().getRouter().navTo("RouteLogin");
 			}
 		},
-			onPress:function(){
+		onPress: function () {
 			this.getOwnerComponent().getRouter().navTo("Login");
 		}
 

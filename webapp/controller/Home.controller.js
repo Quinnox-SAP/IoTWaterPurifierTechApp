@@ -1,7 +1,7 @@
 sap.ui.define([
 	"com/quinnox/IoTTechnicians/controller/BaseController",
 	"sap/m/MessageBox",
-	"sap/ui/core/routing/History",
+	"sap/ui/core/routing/History"
 ], function (BaseController, MessageBox, History) {
 	"use strict";
 
@@ -111,7 +111,7 @@ sap.ui.define([
 				this.getOwnerComponent().getRouter().navTo("RouteLogin");
 			}
 		},
-			onPress:function(){
+		onPress: function () {
 			this.getOwnerComponent().getRouter().navTo("Login");
 		}
 	});

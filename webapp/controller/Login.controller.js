@@ -40,7 +40,7 @@ sap.ui.define([
 			// });
 			// sap.ui.getCore().mobNum = that.getView().byId("idnum").getValue();
 			this.odataService.read("TechnicianNo?MobileNo='" + mobNum + "'", null, null, false, function (response) {
-				console.log(response);
+				// console.log(response);
 				if (response.Message === "Valid No") {
 					// that.getOwnerComponent().getModel("oTechnician").setData(response);
 					// that.getOwnerComponent().getModel("oTechnician").refresh(true);
